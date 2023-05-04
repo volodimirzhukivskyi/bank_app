@@ -1,0 +1,23 @@
+.error{
+    font-size: 16px;
+    color: #ea0030;
+    font-weight: bold;
+    padding: 5px;
+    text-align: center;
+    margin: 0;
+}
+.form{
+    padding: 10px;
+    background: #14B9D5;
+}
+.input{
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.button{
+    padding: 10px 20px;
+    border-radius: 4px;
+    background: #3ec7d9;
+    border: 2px solid blue;
+}

@@ -1,0 +1,10 @@
+spring:
+  main:
+    banner-mode: off
+  datasource:
+    platform: h2
+  jpa:
+    defer-datasource-initialization: true
+    properties:
+      generate_statistics: true
+    hibernate.ddl-auto: none

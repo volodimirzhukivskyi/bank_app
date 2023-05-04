@@ -1,0 +1,63 @@
+server:
+  port: 9000
+
+spring:
+  h2:
+    console:
+      enabled: true
+      settings:
+        trace: false
+logging:
+  level:
+    org:
+#      hibernate: debug
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+---
+spring:
+  sql:
+    init:
+      mode: always
+  datasource:
+    url: jdbc:mysql://uctbaajzcbt20vht:FmP7Q8bGh52qkHCh95Ax@bvzi9n1lqsaaqopca48v-mysql.services.clever-cloud.com:3306/bvzi9n1lqsaaqopca48v
+    username: uctbaajzcbt20vht
+    password: FmP7Q8bGh52qkHCh95Ax
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+      generate_ststistics: true
+    show-sql: true
+  # Для накатки данных базы надо отключить ddl-auto
+  #    hibernate:
+  #      ddl-auto: validate
+  config:
+    activate:
+      on-profile: prod
+---
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+      generate_ststistics: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+  config:
+    activate:
+      on-profile: local
+
