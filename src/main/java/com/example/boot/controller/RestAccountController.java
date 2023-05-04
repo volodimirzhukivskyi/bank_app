@@ -23,17 +23,14 @@ import java.util.stream.Collectors;
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/accounts")
+@RequiredArgsConstructor
 @Slf4j
 public class RestAccountController {
     private final AccountService userService;
     private final AccountRequestMapper accountRequestMapper;
     private final AccountResponseMapper accountResponseMapper;
 
-    public RestAccountController(AccountService userService, AccountRequestMapper accountRequestMapper, AccountResponseMapper accountResponseMapper) {
-        this.userService = userService;
-        this.accountRequestMapper = accountRequestMapper;
-        this.accountResponseMapper = accountResponseMapper;
-    }
+
 
 
     @GetMapping

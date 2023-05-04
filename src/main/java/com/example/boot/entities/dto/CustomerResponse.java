@@ -2,18 +2,12 @@ package com.example.boot.entities.dto;
 
 import com.example.boot.entities.model.Account;
 import com.example.boot.entities.model.Employer;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.HashSet;
 import java.util.Set;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@Data
 public class CustomerResponse {
     private Long id;
     private String name;

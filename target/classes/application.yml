@@ -1,6 +1,5 @@
 server:
   port: 9000
-
 spring:
   h2:
     console:
@@ -9,33 +8,30 @@ spring:
         trace: false
 logging:
   level:
-    org:
-#      hibernate: debug
+    org: error
+    com: off
 ---
 spring:
-  config:
-    activate:
-      on-profile: local
+  profiles:
+    active: prod
 ---
 spring:
   sql:
     init:
       mode: always
+  #      schema-locations: classpath:hr_schema_postgres.sql
   datasource:
-    url: jdbc:mysql://uctbaajzcbt20vht:FmP7Q8bGh52qkHCh95Ax@bvzi9n1lqsaaqopca48v-mysql.services.clever-cloud.com:3306/bvzi9n1lqsaaqopca48v
-    username: uctbaajzcbt20vht
-    password: FmP7Q8bGh52qkHCh95Ax
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:postgresql://localhost:5432/bank_app
+    username: postgres
+    password: postgres
   jpa:
     defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
-      generate_ststistics: true
-    show-sql: true
-  # Для накатки данных базы надо отключить ddl-auto
-  #    hibernate:
-  #      ddl-auto: validate
+        generate_statistics: false
+    show-sql: false
   config:
     activate:
       on-profile: prod

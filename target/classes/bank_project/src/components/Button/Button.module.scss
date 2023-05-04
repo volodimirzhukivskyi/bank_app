@@ -1,0 +1,46 @@
+.button{
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 14px;
+  color: white;
+  border-radius: 4px ;
+  border: none;
+background: #14B9D5;
+
+}
+.button:disabled{
+  opacity: 0.5;
+}
+.CloseButton{
+  color: white;
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.CloseButtonModal{
+  cursor: pointer;
+  color: black;
+  font-size: 25px;
+  background: none;
+  border: none;
+}
+.modalButtonOne{
+  padding: 10px 0;
+  margin-right: 10px;
+  width: 90px;
+  border-radius: 5px;
+  border: none;
+  color: black;
+  font-weight: 700;
+}
+.modalButtonTwo{
+  padding: 10px 0;
+  margin-right: 10px;
+  background: #300605;
+  border-radius: 6px;
+  border: none;
+  width: 60px;
+  color: white;
+  font-weight: 700;
+}

@@ -27,8 +27,9 @@ import static org.modelmapper.config.Configuration.AccessLevel.PRIVATE;
 
 public class BootApplication implements ApplicationRunner {
 
-    @Autowired
-    private UserRepository repository;
+    private final UserRepository repository;
+
+    public BootApplication(UserRepository repository) {this.repository = repository;}
 
     @PostConstruct
     public void initUsers() {

@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS CUSTOMERS;
+DROP TABLE IF EXISTS CUSTOMERS cascade;
 
 CREATE TABLE CUSTOMERS
 (
-    id              INT AUTO_INCREMENT PRIMARY KEY,
+    id              SERIAL PRIMARY KEY,
     name            VARCHAR(50) NOT NULL,
     email           VARCHAR(50) DEFAULT NULL,
     age             INT         NOT NULL,
@@ -10,10 +10,10 @@ CREATE TABLE CUSTOMERS
     created_date    VARCHAR(50) DEFAULT NULL,
     last_modified_date  VARCHAR(50) DEFAULT NULL
 );
-DROP TABLE IF EXISTS ACCOUNTS;
+DROP TABLE IF EXISTS ACCOUNTS cascade;
 CREATE TABLE ACCOUNTS
 (
-    id          INT AUTO_INCREMENT PRIMARY KEY,
+    id          SERIAL PRIMARY KEY,
     number      VARCHAR(50)     ,
     currency    VARCHAR(50)      NOT NULL,
     balance     double precision NOT NULL DEFAULT 0.0,
@@ -22,26 +22,27 @@ CREATE TABLE ACCOUNTS
     last_modified_date  VARCHAR(50) DEFAULT NULL
 
 );
-DROP TABLE IF EXISTS TBL_EMPLOYERS;
+DROP TABLE IF EXISTS TBL_EMPLOYERS cascade;
 CREATE TABLE TBL_EMPLOYERS
 (
-    id          INT AUTO_INCREMENT PRIMARY KEY,
+    id          SERIAL PRIMARY KEY,
     name        VARCHAR(250) NOT NULL,
     address     VARCHAR(250) NOT NULL,
     created_date    VARCHAR(50) DEFAULT NULL,
     last_modified_date  VARCHAR(50) DEFAULT NULL
 );
-DROP TABLE IF EXISTS EMPLOYER_STAFF;
+DROP TABLE IF EXISTS EMPLOYER_STAFF cascade;
 create table EMPLOYER_STAFF
 (
     tbl_emloyers_id int,
-    customer_id     int,
-    foreign key (customer_id) references TBL_EMPLOYERS (id),
-    foreign key (tbl_emloyers_id) references CUSTOMERS (id)
-        ON DELETE CASCADE
-        ON UPDATE CASCADE
+    customer_id     int
+
 );
 ALTER TABLE ACCOUNTS
+    ADD FOREIGN KEY (customer_id) REFERENCES CUSTOMERS (id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE;
+ALTER TABLE EMPLOYER_STAFF
     ADD FOREIGN KEY (customer_id) REFERENCES CUSTOMERS (id)
         ON DELETE CASCADE
         ON UPDATE CASCADE;

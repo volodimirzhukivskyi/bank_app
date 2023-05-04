@@ -1,0 +1,37 @@
+.containerModal{    z-index: 1;
+    position:fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+
+    display: flex;
+    justify-content: center;
+
+}
+.modalWindow{
+    z-index: 1;
+    position: relative;
+    background: #e74c3c;
+    border: none;
+    margin: 10%;
+    color: white;
+    width: auto;
+    max-height: 10%;
+    border-radius: 5px;
+}
+.modalHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    border-radius: 5px 5px 0 0;
+    font-weight: 700;
+    font-size: 16px;
+}
+.modalContent{background: #e74c3c;
+    margin: 0;
+    text-align: center;
+    padding: 20px;
+}

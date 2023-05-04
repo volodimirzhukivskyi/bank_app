@@ -1,0 +1,12 @@
+.big{
+    width:30%
+}
+.addCustomer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.buttons{
+    display: flex;
+    justify-content: space-around;
+}

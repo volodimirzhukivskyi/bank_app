@@ -1,6 +1,6 @@
 INSERT INTO TBL_EMPLOYERS (name, address)
 VALUES ('GOOGLE', 'Kyiv'),
-       ('McDonalds', 'Kharkiv'),
+--        ('McDonalds', 'Kharkiv'),
        ('KFC', 'Kramatorsk');
 INSERT INTO CUSTOMERS (name, email, age)
 VALUES ('Vasya', 'vasya@gmail.com', 23),
